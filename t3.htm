@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>
+TIMER
+</title>
+</head>
+<style>
+.button {
+    background-color: black;
+border: none;
+    color: green;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+<body style="background-color:green;">
+<p id="demo"></p>
+<button id="b1" class="button" onclick="start()">START</button>
+<button id="b2" class="button" onclick="stop()">STOP</button>
+<button id="b3" class="button" onclick="reset()">RESUME</button>
+
+<script>
+var hour=0,min=0,sec=0,day=0;
+var flag;
+var check=setInterval(function(){fcount()
+{
+document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
+document.getElementById("demo").style.color = "black";
+document.getElementById("demo").style.fontFamily = "Arial";
+document.getElementById("demo").style.fontSize = "200%";
+  if(sec!=59)
+     sec++;
+  else
+  {
+     if(min!=59)
+     {
+         min++;
+         sec=0;
+     }
+     else
+     {
+         if(hour!=23)
+         {
+             hour++;
+             min=0;
+             sec=0;
+         }
+         else
+         {
+            day++;
+            hour=0;
+            min=0;
+            sec=0;
+         }
+      }
+   }
+}clearInterval(check);},1000);
+function start()
+{
+flag=1;
+}
+function stop()
+{
+flag=0;
+}
+function reset()
+{
+flag=0;day=0;hour=0;min=0;sec=0;
+}
+if(flag)
+</script>
+</body>
+</html>
