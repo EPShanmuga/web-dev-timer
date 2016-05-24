@@ -1,113 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>
-TIMER
-</title>
+	<title>
+		TIMER
+	</title>
 </head>
 <style>
-.button {
-    background-color: black;
-border: none;
-    color: orange;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-}
+	.button
+	{
+    		background-color: black;
+		border: none;
+    		color: orange;
+    		padding: 15px 32px;
+    		text-align: center;
+    		display: inline-block;
+    		font-size: 16px;
+	}
 </style>
 <body id="bdy" style="background-color:orange;">
-
-<center>
-<h style="font-size:600%;">personalised countdown</h>
-</center>
-<h>hour - month - day - hours - minutes - second</h>
-<br>
-
-<input type="number" id="m1" value="2017">
-<input type="number" id="m2" value="01">
-<input type="number" id="m3" value="01">
-<input type="number" id="m4" value="0">
-<input type="number" id="m5" value="0">
-<input type="number" id="m6" value="0">
-<button class="button" onclick="f3()"><b>Submit</b></button>
-<p id="demo"></p>
-
-<script>
-<!--acquiring the two times and converting to milliseconds-->
-
-function f3(){
-var f = new Date();
-var n = f.getTime();
-var mm1=document.getElementById("m1").value;
-var mm2=document.getElementById("m2").value;
-var mm3=document.getElementById("m3").value;
-var mm4=document.getElementById("m4").value;
-var w1=mm4;
-var mm5=document.getElementById("m5").value;
-var w2=mm5;
-var mm6=document.getElementById("m6").value;
-var w3=mm6;
-var g = new Date(mm1+"-"+mm2+"-"+mm3);
-g.setHours(w1,w2,w3,0);
-var m = g.getTime();
-<!--getting the difference and converting it back-->
-var l=m-n;
-var day=l/86400000;
-day=day-(day%1);
-l=l-(day*86400000);
-var hour=l/3600000;
-hour=hour-(hour%1);
-l=l-(hour*3600000);
-var min=l/60000;
-min=min-(min%1);
-l=l-(min*60000);
-var sec=l/1000;
-sec=sec-(sec%1);
+	<h style="font-size:600%;">personalised countdown>
+		<center>
+		</center>
+	</h>
+	<h>
+		hour - month - day - hours - minutes - second
+	</h>
+	<br>
+	<input type="number" id="m1" value="2017">
+	<input type="number" id="m2" value="01">
+	<input type="number" id="m3" value="01">
+	<input type="number" id="m4" value="0">
+	<input type="number" id="m5" value="0">
+	<input type="number" id="m6" value="0">
+	<button class="button" onclick="f3()"><b>Submit</b></button>
+	<p id="demo">
+	</p>
+	<script>
+		function f3()
+		{
+<!--acquiring the present time and converting to milliseconds-->
+			var f = new Date();
+			var n = f.getTime();
+<!--getting the personalised input and converting to milliseconds-->			
+			var mm1=document.getElementById("m1").value;
+			var mm2=document.getElementById("m2").value;
+			var mm3=document.getElementById("m3").value;
+			var mm4=document.getElementById("m4").value;
+			var w1=mm4;
+			var mm5=document.getElementById("m5").value;
+			var w2=mm5;
+			var mm6=document.getElementById("m6").value;
+			var w3=mm6;
+			var g = new Date(mm1+"-"+mm2+"-"+mm3);
+			g.setHours(w1,w2,w3,0);
+			var m = g.getTime();
+<!--getting the difference in milliseconds-->
+			var l=m-n;
+<!--converting back to days,hours,minutes,seconds-->
+			var day=l/86400000;
+			day=day-(day%1);
+			l=l-(day*86400000);
+			var hour=l/3600000;
+			hour=hour-(hour%1);
+			l=l-(hour*3600000);
+			var min=l/60000;
+			min=min-(min%1);
+			l=l-(min*60000);
+			var sec=l/1000;
+			sec=sec-(sec%1);
 <!--decrementing the timer-->
-function myFunction() { 
-
-
- document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
-document.getElementById("demo").style.color = "black";
-document.getElementById("demo").style.fontFamily = "Arial";
-document.getElementById("demo").style.fontSize = "200%";
-
-
-if(sec)sec--;
-          else
-          {
-	if(min)
-	{
-	          min--;
-	          sec=59;
-	}
-	else
-	{	
-	      if(hour) 
-	      {
-		hour--;
-		min=59;
-		sec=59;
-	      }
-	     else
-                     {
-	            if(day) 
-	            {
-		     day--;
-		     hour=23;
-		     min=59;
-		     sec=59;
-	            }
+			function myFunction() 
+			{ 
+				document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
+				document.getElementById("demo").style.color = "black";
+				document.getElementById("demo").style.fontFamily = "Arial";
+				document.getElementById("demo").style.fontSize = "200%";
+				if(sec)sec--;
+          			else
+          			{
+					if(min)
+					{
+	          				min--;
+	          				sec=59;
+					}
+					else
+					{	
+						if(hour) 
+	      					{
+							hour--;
+							min=59;
+							sec=59;
+						}
+						 else
+                				{
+	            					if(day) 
+	            					{
+								day--;
+		    						hour=23;
+								min=59;
+		     						sec=59;
+	            					}
 				
-	     }
-	}
-        }
-}
-setInterval(function(){myFunction();},1000);
-}
-</script>
-
-
+						}
+					}
+        			}
+			}
+			setInterval(function(){myFunction();},1000);
+		}
+	</script>
 </body>
 </html>
