@@ -2,87 +2,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>
-TIMER
-</title>
+    <title>
+        TIMER
+    </title>
 </head>
 <style>
-.button {
-    background-color: black;
-border: none;
-    color: orange;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-}
+    .button 
+    {
+        background-color: black;
+        border: none;
+        color: orange;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+    }
 </style>
 <body style="background-color:orange;">
-<br>
-<h style="color:black; font-size:400%; font-color:sylfaen;"><b><center><ins>STOPWATCH</ins></center></b></h>
-<br>
-<center><p id="demo"></p></center>
-<br><b>
-<center><button class="button" onclick="stop()"><b>STOP</b></button>
-<button class="button" onclick="start()"><b>START</b></button>
-<button class="button" onclick="reset()"><b>RESET</b></button></center>
-
-
-<script>
-var day=0,hour=0,min=0,sec=0;
-
-var check = setInterval(function(){ fcount() }, 1000);
-function start(){
-check = setInterval(function(){ fcount() }, 1000);
-}
-function fcount() {
-
-document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
-document.getElementById("demo").style.color = "black";
-document.getElementById("demo").style.fontFamily = "Arial";
-document.getElementById("demo").style.fontSize = "200%";
-  if(sec!=59)
-     sec++;
-  else
-  {
-     if(min!=59)
-     {
-         min++;
-         sec=0;
-     }
-     else
-     {
-         if(hour!=23)
-         {
-             hour++;
-             min=0;
-             sec=0;
-         }
-         else
-         {
-            day++;
-            hour=0;
-            min=0;
-            sec=0;
-         }
-      }
-   }
-}
-
-
-function stop() {
-    clearInterval(check);
-}
-function reset()
-{
-clearInterval(check);
-day=0;hour=0;min=0;sec=0;
-document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
-document.getElementById("demo").style.color = "black";
-document.getElementById("demo").style.fontFamily = "Arial";
-document.getElementById("demo").style.fontSize = "200%";
-}
-</script>
-
+    <br>
+    <h style="color:black; font-size:400%; font-color:sylfaen;">
+        <b>
+        <center>
+        <ins>
+        STOPWATCH
+        </ins>
+        </center>
+        </b>
+        </h>
+    <br>
+    <center><p id="demo"></p></center>
+    <br>
+    <b>
+    <center>
+    <button class="button" onclick="stop()">
+    <b>
+    STOP
+    </b>
+    </button>
+    <button class="button" onclick="start()"><b>START</b></button>
+    <button class="button" onclick="reset()"><b>RESET</b></button></center>
+    <script>
+        var day=0,hour=0,min=0,sec=0;
+        var check = setInterval(function(){ fcount() }, 1000);
+        function start()
+        {
+            check = setInterval(function(){ fcount() }, 1000);
+        }
+        function fcount() {
+            document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
+            document.getElementById("demo").style.color = "black";
+            document.getElementById("demo").style.fontFamily = "Arial";
+            document.getElementById("demo").style.fontSize = "200%";
+            if(sec!=59)
+                sec++;
+            else
+            {
+                if(min!=59)
+                {
+                    min++;
+                    sec=0;
+                }
+                else
+                {
+                    if(hour!=23)
+                    {
+                        hour++;
+                        min=0;
+                        sec=0;
+                    }
+                    else
+                    {
+                        day++;
+                        hour=0;
+                        min=0;
+                        sec=0;
+                    }
+                }
+            }
+        }
+        function stop() 
+        {
+            clearInterval(check);
+        }
+        function reset()
+        {
+            clearInterval(check);
+            day=0;hour=0;min=0;sec=0;
+            document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
+            document.getElementById("demo").style.color = "black";
+            document.getElementById("demo").style.fontFamily = "Arial";
+            document.getElementById("demo").style.fontSize = "200%";
+        }
+    </script>
 </body>
 </html>
