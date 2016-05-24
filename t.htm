@@ -1,105 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TIMER</title>
+	<title>
+		TIMER
+	</title>
 </head>
+
 <body id="b" style="background-color:black;">
-
-
-<center>
-<b>
-
-<h id="watch"><ins></ins></h>
-
-</b>
-</center>
-
-<br>
-
-<center>
-<h id="countdown">
-</h></center>
-
-<center>
-<p id="demo"></p>
-</center>
-
-
-<iframe src="file:///C:/Users/harish/Desktop/Delta1-Timer/t2.htm">
-  <p>Your browser does not support iframes.</p>
-</iframe>
-
-<script>
+	
+	<h id="watch">
+		<center>
+		<b>
+		</b>
+		</center>
+	</h>
+	
+	<br>
+	
+	<h id="countdown">
+		<center>
+		</center>
+	</h>
+	
+	<p id="demo">
+		<center>
+		</center>
+	</p>
+	
+	<script>
 <!--acquiring the two times and converting to milliseconds-->
-var f = new Date();
-var n = f.getTime();
-var g=new Date("2017-01-01");
-g.setHours(0,0,0,0);
-var m = g.getTime();
-<!--getting the difference and converting it back-->
-var l=m-n;
-var day=l/86400000;
-day=day-(day%1);
-l=l-(day*86400000);
-var hour=l/3600000;
-hour=hour-(hour%1);
-l=l-(hour*3600000);
-var min=l/60000;
-min=min-(min%1);
-l=l-(min*60000);
-var sec=l/1000;
-sec=sec-(sec%1);
+		var f = new Date();
+		var n = f.getTime();
+		var g=new Date("2017-01-01");
+		g.setHours(0,0,0,0);
+		var m = g.getTime();
+<!--getting the difference in milliseconds-->
+		var l=m-n;
+<!--converting back to days ,hours,minutes,seconds-->
+		var day=l/86400000;
+		day=day-(day%1);
+		l=l-(day*86400000);
+		var hour=l/3600000;
+		hour=hour-(hour%1);
+		l=l-(hour*3600000);
+		var min=l/60000;
+		min=min-(min%1);
+		l=l-(min*60000);
+		var sec=l/1000;
+		sec=sec-(sec%1);
 <!--decrementing the timer-->
-function myFunction() { 
+		function myFunction() 
+		{
+			document.getElementById("watch").innerHTML="THE WATCHMAKERS";
+			document.getElementById("watch").style.color = "red";
+			document.getElementById("watch").style.fontFamily = "Sylfaen";
+			document.getElementById("watch").style.fontSize = "600%";
 
-document.getElementById("watch").innerHTML="THE WATCHMAKERS";
-document.getElementById("watch").style.color = "red";
-document.getElementById("watch").style.fontFamily = "Sylfaen";
-document.getElementById("watch").style.fontSize = "600%";
+			document.getElementById("countdown").innerHTML="OUR APP'S IS OUT IN";
+			document.getElementById("countdown").style.color = "darkblue";
+			document.getElementById("countdown").style.fontFamily = "Sylfaen";
+			document.getElementById("countdown").style.fontSize = "400%";
 
-document.getElementById("countdown").innerHTML="OUR APP'S IS OUT IN";
-document.getElementById("countdown").style.color = "darkblue";
-document.getElementById("countdown").style.fontFamily = "Sylfaen";
-document.getElementById("countdown").style.fontSize = "400%";
+ 			document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
+			document.getElementById("demo").style.color = "magenta";
+			document.getElementById("demo").style.fontFamily = "Arial";
+			document.getElementById("demo").style.fontSize = "200%";
 
- document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
-document.getElementById("demo").style.color = "magenta";
-document.getElementById("demo").style.fontFamily = "Arial";
-document.getElementById("demo").style.fontSize = "200%";
-
-
-if(sec)sec--;
-          else
-          {
-	if(min)
-	{
-	          min--;
-	          sec=59;
-	}
-	else
-	{	
-	      if(hour) 
-	      {
-		hour--;
-		min=59;
-		sec=59;
-	      }
-	     else
-                     {
-	            if(day) 
-	            {
-		     day--;
-		     hour=23;
-		     min=59;
-		     sec=59;
-	            }
-				
-	     }
-	}
-        }
-}
-setInterval(function(){myFunction();},1000);
-</script>
-
+			if(sec)sec--;
+          		else
+          		{
+				if(min)
+				{
+	          			min--;
+	        			 sec=59;
+				}
+				else
+				{	
+	      				if(hour) 
+	      				{
+						hour--;
+						min=59;
+						sec=59;
+					}
+	     				else
+                			{
+	            				if(day) 
+	        				{
+		     					day--;
+		     					hour=23;
+		     					min=59;
+		     					sec=59;
+	            				}
+					}
+				}
+        		}
+		}
+<!--repeating the decrement-->
+		setInterval(function(){myFunction();},1000);
+	</script>
 </body>
 </html>
