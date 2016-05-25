@@ -5,7 +5,15 @@
 		TIMER
 	</title>
 </head>
-
+<style>
+	div 
+	{
+    		background-color: orange;
+    		width: 100px;
+    		padding:25px;
+    		margin: 40px;
+	}
+</style>
 <body id="b" style="background-color:black;">
 	
 	<h id="watch">
@@ -21,11 +29,22 @@
 		<center>
 		</center>
 	</h>
-	
-	<p id="demo">
-		<center>
-		</center>
-	</p>
+	<div>
+		<center><p><font size="6">DAYS</font></p></center>
+		<p id="pday"><center></center></p>	
+	</div>
+	<div>
+		<center><p><font size="6">HOURS</font></p></center>
+		<p id="phour"><center></center></p>
+	</div>
+	<div>
+		<center><p><font size="6">MINS</font></p></center>
+		<p id="pmin"><center></center></p>	
+	</div>
+	<div>
+		<center><p><font size="6">SECS</font></p></center>
+		<p id="psec"><center></center></p>	
+	</div>
 	
 	<script>
 <!--acquiring the two times and converting to milliseconds-->
@@ -52,19 +71,35 @@
 		function myFunction() 
 		{
 			document.getElementById("watch").innerHTML="THE WATCHMAKERS";
-			document.getElementById("watch").style.color = "red";
+			document.getElementById("watch").style.color = "orange";
 			document.getElementById("watch").style.fontFamily = "Sylfaen";
 			document.getElementById("watch").style.fontSize = "600%";
 
 			document.getElementById("countdown").innerHTML="OUR APP'S IS OUT IN";
-			document.getElementById("countdown").style.color = "darkblue";
+			document.getElementById("countdown").style.color = "orange";
 			document.getElementById("countdown").style.fontFamily = "Sylfaen";
 			document.getElementById("countdown").style.fontSize = "400%";
 
- 			document.getElementById("demo").innerHTML = day+" : "+hour+" : "+min+" : "+sec;
-			document.getElementById("demo").style.color = "magenta";
-			document.getElementById("demo").style.fontFamily = "Arial";
-			document.getElementById("demo").style.fontSize = "200%";
+ 	
+ 			document.getElementById("pday").innerHTML = day;
+			document.getElementById("pday").style.color = "black";
+			document.getElementById("pday").style.fontFamily = "Arial";
+			document.getElementById("pday").style.fontSize = "300%";
+			
+			document.getElementById("phour").innerHTML = hour;
+			document.getElementById("phour").style.color = "black";
+			document.getElementById("phour").style.fontFamily = "Arial";
+			document.getElementById("phour").style.fontSize = "300%";
+			
+			document.getElementById("pmin").innerHTML =min;
+			document.getElementById("pmin").style.color = "black";
+			document.getElementById("pmin").style.fontFamily = "Arial";
+			document.getElementById("pmin").style.fontSize = "300%";
+			
+			document.getElementById("psec").innerHTML = sec;
+			document.getElementById("psec").style.color = "black";
+			document.getElementById("psec").style.fontFamily = "Arial";
+			document.getElementById("psec").style.fontSize = "300%";
 
 			if(sec)sec--;
           		else
