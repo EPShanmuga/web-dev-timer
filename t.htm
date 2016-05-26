@@ -6,45 +6,40 @@
 	</title>
 </head>
 <style>
-	div 
-	{
-    		background-color: orange;
-    		width: 100px;
-    		padding:25px;
-    		margin: 40px;
-	}
+span{
+ background-color: orange;
+    width: 100px;
+    padding:5px;
+    margin: 2px;
+border: 1px solid red;
+}
+
 </style>
-<body id="b" style="background-color:black;">
+
+<body id="b" style="background-color:black; display:inline">
 	
+	<center>
 	<h id="watch">
-		<center>
-		<b>
-		</b>
-		</center>
+	<b>
+	</b>
 	</h>
+	</center>
 	
 	<br>
 	
+	<center>
 	<h id="countdown">
-		<center>
-		</center>
 	</h>
-	<div>
-		<center><p><font size="6">DAYS</font></p></center>
-		<p id="pday"><center></center></p>	
-	</div>
-	<div>
-		<center><p><font size="6">HOURS</font></p></center>
-		<p id="phour"><center></center></p>
-	</div>
-	<div>
-		<center><p><font size="6">MINS</font></p></center>
-		<p id="pmin"><center></center></p>	
-	</div>
-	<div>
-		<center><p><font size="6">SECS</font></p></center>
-		<p id="psec"><center></center></p>	
-	</div>
+	</center>
+
+	<br>
+<!--displaying the counter-->	
+	<center>
+	<span id="demo1"></span>
+	<span id="demo2"></span>
+	<span id="demo3"></span>
+	<span id="demo4"></span>
+	</center>
 	
 	<script>
 <!--acquiring the two times and converting to milliseconds-->
@@ -80,27 +75,22 @@
 			document.getElementById("countdown").style.fontFamily = "Sylfaen";
 			document.getElementById("countdown").style.fontSize = "400%";
 
- 	
- 			document.getElementById("pday").innerHTML = day;
-			document.getElementById("pday").style.color = "black";
-			document.getElementById("pday").style.fontFamily = "Arial";
-			document.getElementById("pday").style.fontSize = "300%";
+			document.getElementById("demo1").innerHTML ="DAY : "+day;
+			document.getElementById("demo1").style.color = "black";
+			document.getElementById("demo1").style.fontFamily = "Arial";
 			
-			document.getElementById("phour").innerHTML = hour;
-			document.getElementById("phour").style.color = "black";
-			document.getElementById("phour").style.fontFamily = "Arial";
-			document.getElementById("phour").style.fontSize = "300%";
+			document.getElementById("demo2").innerHTML ="HOUR : "+hour;
+			document.getElementById("demo2").style.color = "black";
+			document.getElementById("demo2").style.fontFamily = "Arial";
 			
-			document.getElementById("pmin").innerHTML =min;
-			document.getElementById("pmin").style.color = "black";
-			document.getElementById("pmin").style.fontFamily = "Arial";
-			document.getElementById("pmin").style.fontSize = "300%";
+			document.getElementById("demo3").innerHTML ="MIN : "+min;
+			document.getElementById("demo3").style.color = "black";
+			document.getElementById("demo3").style.fontFamily = "Arial";
 			
-			document.getElementById("psec").innerHTML = sec;
-			document.getElementById("psec").style.color = "black";
-			document.getElementById("psec").style.fontFamily = "Arial";
-			document.getElementById("psec").style.fontSize = "300%";
-
+			document.getElementById("demo4").innerHTML = "SEC : "+sec;
+			document.getElementById("demo4").style.color = "black";
+			document.getElementById("demo4").style.fontFamily = "Arial";
+			<!--document.getElementById("demo1").style.fontSize = "300%";-->
 			if(sec)sec--;
           		else
           		{
