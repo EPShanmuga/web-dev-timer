@@ -6,13 +6,17 @@
 	</title>
 </head>
 <style>
-	span
+	div
 	{
  		background-color: black;
-		width: 100px;
-    		padding:5px;
+    		width: 15px;
+    		padding-left:25px;
+		padding-right:35px;
+		padding-top:20px;
+		padding-bottom:20px;
     		margin: 2px;
 		border: 1px solid red;
+		display: inline-block;
 	}
 	body
 	{
@@ -68,10 +72,10 @@
 
 	<br>
 	
-	<span id="demo1"></span><b><font size=45px> : </b></font>
-	<span id="demo2"></span><b><font size=45px> : </b></font>
-	<span id="demo3"></span><b><font size=45px> : </b></font>
-	<span id="demo4"></span>
+	<div id="demo1"></span><b>
+	<div id="demo2"></span><b>
+	<div id="demo3"></span><b>
+	<div id="demo4"></span>
 	
 	<script>
 		function f3()
@@ -109,25 +113,25 @@
 <!--decrementing the timer-->
 			function myFunction() 
 			{ 
-				document.getElementById("demo1").innerHTML = day;
+				document.getElementById("demo1").innerHTML = " DAY : "+day;
 				document.getElementById("demo1").style.color = "orange";
 				document.getElementById("demo1").style.fontFamily = "Arial";
-				document.getElementById("demo1").style.fontSize = "200%";
+				
 
-				document.getElementById("demo2").innerHTML = hour;
+				document.getElementById("demo2").innerHTML = " HOUR : "+hour;
 				document.getElementById("demo2").style.color = "orange";
 				document.getElementById("demo2").style.fontFamily = "Arial";
-				document.getElementById("demo2").style.fontSize = "200%";
+				
 
-				document.getElementById("demo3").innerHTML = min;
+				document.getElementById("demo3").innerHTML = " MIN : "+min;
 				document.getElementById("demo3").style.color = "orange";
 				document.getElementById("demo3").style.fontFamily = "Arial";
-				document.getElementById("demo3").style.fontSize = "200%";
+				
 
-				document.getElementById("demo4").innerHTML = sec;
+				document.getElementById("demo4").innerHTML = " SEC : "+sec;
 				document.getElementById("demo4").style.color = "orange";
 				document.getElementById("demo4").style.fontFamily = "Arial";
-				document.getElementById("demo4").style.fontSize = "200%";
+				
 				if(sec)sec--;
           			else
           			{
