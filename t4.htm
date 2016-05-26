@@ -6,14 +6,18 @@
     </title>
 </head>
 <style>
-  span
-  {
-    background-color: black;
-    width: 100px;
-    padding:5px;
-    margin: 2px;
-    border: 1px solid red;
-  }
+  div
+	{
+ 		background-color: black;
+    		width: 15px;
+    		padding-left:25px;
+		padding-right:35px;
+		padding-top:20px;
+		padding-bottom:20px;
+    		margin: 2px;
+		border: 1px solid red;
+		display: inline-block;
+	}
   body
   {
     width:1250px;
@@ -60,44 +64,27 @@
 	  <input type="number" id="m3" value="01">
 	  <input type="number" id="m4" value="0">
 	  <input type="number" id="m5" value="0">
-  	<input type="number" id="m6" value="0">
+  	  <input type="number" id="m6" value="0">
 
-    <br>
-    <center>
-    <p style="font-size:200%">
-    <b>
-    DAYS : HOURS : MINS : SECS
-    </b>
-    </p>
-    </center>
+<br>
 
     <br>
 	
 	  <center>
-	  <span id="demo1">
-	  </span>
-	  <b>
-	  <font size=45px>
-	  : 
-	  </b>
-	  </font>
+
+	  <div id="demo1">
+	  </div>
 	  
-    <span id="demo2">
-    </span>
-    <b>
-    <font size=45px>
-    : 
-    </b>
-    </font>
+       	  <div id="demo2">
+    	  </div>
   
-    <span id="demo3">
-    </span>
-    <b>
-    <font size=45px>
-     : 
-    </b>
-    </font>
-    <span id="demo4"></span></center>
+    	  <div id="demo3">
+	  </div>
+
+          <div id="demo4">
+          </div>
+          
+          </center>
 
     <br>
     
@@ -124,29 +111,25 @@
     
     <script>
 <!--acquiring the present time and converting to milliseconds-->
-
 			var f,l,m,n,min,sec,day,hour,m1,mm1,m2,mm2,m3,mm3,m4,mm4,m5,mm5,m6,mm6,g,w1,w2,w3,check;
 			function fcount() 
 			{ 
-				document.getElementById("demo1").innerHTML = day;
+				document.getElementById("demo1").innerHTML = " DAY : "+day;
 				document.getElementById("demo1").style.color = "orange";
 				document.getElementById("demo1").style.fontFamily = "Arial";
-				document.getElementById("demo1").style.fontSize = "200%";
-
-        document.getElementById("demo2").innerHTML = hour;
+				
+				 document.getElementById("demo2").innerHTML = " HR : "+hour;
 				document.getElementById("demo2").style.color = "orange";
 				document.getElementById("demo2").style.fontFamily = "Arial";
-				document.getElementById("demo2").style.fontSize = "200%";
-
-        document.getElementById("demo3").innerHTML = min;
+				
+        			document.getElementById("demo3").innerHTML = " MIN : "+min;
 				document.getElementById("demo3").style.color = "orange";
 				document.getElementById("demo3").style.fontFamily = "Arial";
-				document.getElementById("demo3").style.fontSize = "200%";
-
-        document.getElementById("demo4").innerHTML = sec;
+				
+				document.getElementById("demo4").innerHTML = " SEC : "+sec;
 				document.getElementById("demo4").style.color = "orange";
 				document.getElementById("demo4").style.fontFamily = "Arial";
-				document.getElementById("demo4").style.fontSize = "200%";
+				
 				if(sec)sec--;
         else
         {
@@ -176,7 +159,6 @@
 					}
         			}
 			}
-
         function start()
         {f = new Date();
 			n = f.getTime();
@@ -219,25 +201,22 @@
         {
             clearInterval(check);
             day=0;hour=0;min=0;sec=0;
-            document.getElementById("demo1").innerHTML = day;
+            document.getElementById("demo1").innerHTML = " DAY : "+day;
 				document.getElementById("demo1").style.color = "orange";
 				document.getElementById("demo1").style.fontFamily = "Arial";
-				document.getElementById("demo1").style.fontSize = "200%";
-
-document.getElementById("demo2").innerHTML = hour;
+				
+				document.getElementById("demo2").innerHTML = " HR : "+hour;
 				document.getElementById("demo2").style.color = "orange";
 				document.getElementById("demo2").style.fontFamily = "Arial";
-				document.getElementById("demo2").style.fontSize = "200%";
-
-document.getElementById("demo3").innerHTML = min;
+				
+				document.getElementById("demo3").innerHTML = " MIN : "+min;
 				document.getElementById("demo3").style.color = "orange";
 				document.getElementById("demo3").style.fontFamily = "Arial";
-				document.getElementById("demo3").style.fontSize = "200%";
-
-document.getElementById("demo4").innerHTML = sec;
+				
+				document.getElementById("demo4").innerHTML = " SEC : "+sec;
 				document.getElementById("demo4").style.color = "orange";
 				document.getElementById("demo4").style.fontFamily = "Arial";
-				document.getElementById("demo4").style.fontSize = "200%";
+				
         }
     </script>
 </body>
